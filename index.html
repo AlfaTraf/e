@@ -1,0 +1,1535 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>ALFATRAF — подписчики в крипто Telegram-каналы из соцсетей</title>
+  <meta name="description" content="ALFATRAF помогает крипто Telegram-каналам получать стабильный поток целевых подписчиков из соцсетей через воронки, креативы и системную оптимизацию." />
+  <meta name="theme-color" content="#0A0A0C" />
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2124593531676935');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2124593531676935&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    :root{
+      --bg:#0A0A0C;
+      --bg2:#101017;
+      --card:#151520;
+      --card2:#181824;
+      --text:#F5F1E8;
+      --muted:rgba(245,241,232,.78);
+      --muted2:rgba(245,241,232,.56);
+      --gold:#C7A25D;
+      --gold2:#F2D189;
+      --line:rgba(199,162,93,.18);
+      --line2:rgba(242,209,137,.28);
+      --shadow:0 24px 90px rgba(0,0,0,.52);
+      --radius:22px;
+      --radius2:16px;
+      --max:1180px;
+      --safeTop: env(safe-area-inset-top, 0px);
+      --safeBottom: env(safe-area-inset-bottom, 0px);
+      color-scheme: dark;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      color:var(--text);
+      font:16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(1100px 700px at 75% 10%, rgba(199,162,93,.14), transparent 56%),
+        radial-gradient(800px 600px at 10% 80%, rgba(199,162,93,.09), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      overflow-x:hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding-bottom: var(--safeBottom);
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+    .container{ width:min(var(--max), 92vw); margin:0 auto; }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter: blur(12px);
+      background: rgba(10,10,12,.68);
+      border-bottom:1px solid var(--line);
+      padding-top:var(--safeTop);
+    }
+    .topbar-inner{
+      min-height:68px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:12px 0;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:190px;
+    }
+
+    .logo-wrap{
+      width:38px;height:38px;
+      border-radius:13px;
+      border:1px solid rgba(242,209,137,.28);
+      background:
+        radial-gradient(60% 60% at 30% 20%, rgba(242,209,137,.52), transparent 60%),
+        linear-gradient(135deg, rgba(199,162,93,.95), rgba(199,162,93,.12));
+      box-shadow: 0 10px 30px rgba(199,162,93,.18);
+      overflow:hidden;
+      display:grid;
+      place-items:center;
+      flex:0 0 auto;
+    }
+    .logo-wrap img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      filter: drop-shadow(0 6px 18px rgba(0,0,0,.35));
+    }
+    .logo-fallback{
+      font-weight:900;
+      font-size:16px;
+      color:#fff;
+      opacity:.95;
+    }
+
+    .brand b{
+      display:block;
+      font-weight:800;
+      letter-spacing:.04em;
+    }
+    .brand small{
+      display:block;
+      color:var(--muted2);
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin-top:2px;
+    }
+
+    nav{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    nav a{
+      color:var(--muted);
+      font-size:12px;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      padding:10px 12px;
+      border-radius:999px;
+      transition:.18s ease;
+      white-space:nowrap;
+    }
+    nav a:hover{
+      color:var(--text);
+      background:rgba(199,162,93,.08);
+    }
+
+    .cta{ display:flex; align-items:center; gap:10px; }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:46px;
+      padding:12px 18px;
+      border-radius:999px;
+      border:1px solid rgba(199,162,93,.28);
+      background:rgba(18,18,26,.36);
+      color:var(--text);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      transition:.18s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,.32);
+      white-space:nowrap;
+      cursor:pointer;
+    }
+    .btn:hover{
+      transform:translateY(-1px);
+      box-shadow:0 16px 50px rgba(0,0,0,.42);
+      border-color:rgba(242,209,137,.5);
+    }
+    .btn:active{ transform:translateY(0) scale(.99); }
+
+    .btn-primary{
+      border-color:rgba(242,209,137,.42);
+      background:
+        radial-gradient(80% 160% at 50% 0%, rgba(242,209,137,.18), transparent 55%),
+        linear-gradient(180deg, rgba(199,162,93,.16), rgba(18,18,26,.26));
+      position:relative;
+      overflow:hidden;
+    }
+    .btn-primary:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: linear-gradient(90deg, transparent, rgba(242,209,137,.28), transparent);
+      transform:translateX(-65%);
+      transition:.6s ease;
+      pointer-events:none;
+    }
+    .btn-primary:hover:before{ transform:translateX(65%); }
+
+    .btn-ghost{
+      background:rgba(18,18,26,.18);
+      color:var(--muted);
+    }
+    .btn-ghost:hover{ color:var(--text); }
+
+    .menu-btn{
+      display:none;
+      min-height:44px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(18,18,26,.3);
+      color:var(--text);
+      font-size:12px;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      cursor:pointer;
+    }
+
+    section{ padding:42px 0; }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(18,18,26,.24);
+      color:rgba(242,209,137,.92);
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+    .dot{
+      width:7px;height:7px;border-radius:50%;
+      background:rgba(242,209,137,.92);
+      box-shadow:0 0 20px rgba(242,209,137,.45);
+    }
+
+    .hero{ padding:56px 0 28px; }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+      gap:22px;
+      align-items:stretch;
+    }
+
+    h1,h2{
+      font-family: ui-serif, Georgia, "Times New Roman", serif;
+      font-weight:700;
+      letter-spacing:.01em;
+      line-height:1.05;
+      margin:0;
+    }
+    h1{
+      margin-top:16px;
+      font-size:clamp(36px, 4.7vw, 62px);
+      max-width:12ch;
+    }
+    h2{ font-size:clamp(26px, 2.7vw, 36px); }
+
+    .lead{
+      margin:14px 0 0;
+      color:var(--muted);
+      font-size:17px;
+      max-width:64ch;
+    }
+
+    .hero-bullets{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+      margin-top:20px;
+      max-width:640px;
+    }
+    .hero-bullets span,
+    .microtrust span,
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(18,18,26,.18);
+      color:var(--muted);
+      font-size:14px;
+      width:fit-content;
+      max-width:100%;
+    }
+
+    .check{
+      width:17px;height:17px;border-radius:6px;
+      display:grid;place-items:center;
+      border:1px solid rgba(242,209,137,.28);
+      background:rgba(199,162,93,.18);
+      color:rgba(242,209,137,.96);
+      font-size:12px;
+      font-weight:900;
+      line-height:1;
+      flex:0 0 auto;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:20px;
+    }
+    .microtrust{
+      margin-top:18px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .card,
+    .step,
+    .case,
+    .form-card,
+    .trust-card{
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      background:rgba(18,18,26,.28);
+      box-shadow:0 18px 60px rgba(0,0,0,.28);
+      padding:20px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card:before,
+    .step:before,
+    .case:before,
+    .form-card:before,
+    .trust-card:before{
+      content:"";
+      position:absolute;
+      inset:-42%;
+      background:radial-gradient(circle at 30% 30%, rgba(242,209,137,.09), transparent 50%);
+      filter:blur(20px);
+      opacity:.75;
+      pointer-events:none;
+    }
+    .card > *,
+    .step > *,
+    .case > *,
+    .form-card > *,
+    .trust-card > *{ position:relative; }
+
+    .hero-panel{
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .panel-top{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:12px;
+    }
+
+    .mini-stat{
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+      padding:16px;
+      min-height:96px;
+    }
+    .mini-stat .label{
+      color:rgba(242,209,137,.88);
+      font-size:11px;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+      margin-bottom:10px;
+    }
+    .mini-stat .value{
+      font-size:28px;
+      line-height:1;
+      font-weight:800;
+      background:linear-gradient(90deg, rgba(242,209,137,.98), rgba(199,162,93,.72));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .mini-stat p{
+      margin:8px 0 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .form-title{
+      font-size:22px;
+      font-family: ui-serif, Georgia, serif;
+      line-height:1.15;
+      margin:0 0 8px;
+    }
+    .form-sub{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .form{
+      display:grid;
+      gap:12px;
+    }
+    .field{
+      display:grid;
+      gap:7px;
+    }
+    .field label{
+      font-size:12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--muted2);
+    }
+    .input,
+    .select,
+    .textarea{
+      width:100%;
+      border-radius:14px;
+      border:1px solid rgba(199,162,93,.18);
+      background:rgba(10,10,12,.42);
+      color:var(--text);
+      padding:14px 14px;
+      outline:none;
+      font:inherit;
+      transition:.18s ease;
+    }
+    .input:focus,
+    .select:focus,
+    .textarea:focus{
+      border-color:rgba(242,209,137,.4);
+      box-shadow:0 0 0 4px rgba(242,209,137,.06);
+    }
+    .textarea{
+      resize:vertical;
+      min-height:98px;
+    }
+
+    .form-note{
+      color:var(--muted2);
+      font-size:12px;
+      margin:2px 0 0;
+    }
+
+    .section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom:18px;
+      flex-wrap:wrap;
+    }
+    .sub{
+      margin:8px 0 0;
+      color:var(--muted);
+      max-width:72ch;
+    }
+
+    .grid-4{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+    }
+
+    .kicker{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin:0 0 10px;
+      color:rgba(242,209,137,.9);
+      font-size:12px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+    .kicker:before{
+      content:"";
+      width:10px;height:10px;
+      border-radius:5px;
+      background:rgba(242,209,137,.22);
+      border:1px solid rgba(242,209,137,.35);
+      box-shadow:0 0 18px rgba(242,209,137,.16);
+      flex:0 0 auto;
+    }
+
+    .card h3,
+    .step h3,
+    .case h3,
+    .trust-card h3{
+      margin:0 0 8px;
+      font-size:17px;
+      line-height:1.3;
+    }
+    .card p,
+    .step p,
+    .case p,
+    .trust-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .metric{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .metric .value{
+      font-size:36px;
+      line-height:1;
+      font-weight:800;
+      background:linear-gradient(90deg, rgba(242,209,137,.98), rgba(199,162,93,.74));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .metric .label{
+      font-size:12px;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.12em;
+    }
+
+    .step{
+      display:flex;
+      align-items:flex-start;
+      gap:14px;
+      min-height:110px;
+    }
+    .step-num{
+      width:38px;height:38px;
+      border-radius:14px;
+      display:grid;place-items:center;
+      border:1px solid rgba(242,209,137,.28);
+      background:rgba(199,162,93,.12);
+      color:rgba(242,209,137,.94);
+      font-weight:900;
+      box-shadow:0 14px 40px rgba(0,0,0,.3);
+      flex:0 0 auto;
+    }
+
+    .proof-bar{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+
+    .proof-item{
+      border-radius:20px;
+      border:1px solid var(--line);
+      background:rgba(18,18,26,.24);
+      padding:18px;
+      box-shadow:0 16px 50px rgba(0,0,0,.22);
+    }
+    .proof-item .big{
+      font-size:32px;
+      line-height:1;
+      font-weight:800;
+      margin:0 0 10px;
+      background:linear-gradient(90deg, rgba(242,209,137,.98), rgba(199,162,93,.76));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .proof-item .small{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .case{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      min-height:100%;
+    }
+    .case-top{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:flex-start;
+      flex-wrap:wrap;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(18,18,26,.18);
+      color:rgba(242,209,137,.92);
+      font-size:11px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+
+    .case-list{
+      display:grid;
+      gap:8px;
+    }
+    .case-line{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      padding:10px 0;
+      border-top:1px solid rgba(199,162,93,.12);
+      color:var(--muted);
+      font-size:14px;
+    }
+    .case-line:first-child{ border-top:0; padding-top:0; }
+    .case-line b{ color:var(--text); font-weight:700; }
+
+    .trust-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    .cta-block{
+      padding:28px;
+      border-radius:calc(var(--radius) + 6px);
+      border:1px solid rgba(242,209,137,.22);
+      background:
+        radial-gradient(900px 420px at 30% 10%, rgba(242,209,137,.16), transparent 55%),
+        radial-gradient(700px 450px at 80% 70%, rgba(199,162,93,.1), transparent 60%),
+        linear-gradient(180deg, rgba(18,18,26,.38), rgba(10,10,12,.32));
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .cta-block:before{
+      content:"";
+      position:absolute;
+      inset:-42%;
+      background:linear-gradient(90deg, transparent, rgba(242,209,137,.08), transparent);
+      transform:rotate(12deg);
+      pointer-events:none;
+    }
+
+    .cta-row{
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+    .cta-row p{
+      margin:8px 0 0;
+      color:var(--muted);
+    }
+
+    details{
+      border-radius:var(--radius2);
+      border:1px solid var(--line);
+      background:rgba(18,18,26,.2);
+      box-shadow:0 14px 50px rgba(0,0,0,.22);
+      padding:14px;
+    }
+    details + details{ margin-top:10px; }
+
+    summary{
+      list-style:none;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      font-weight:700;
+      padding:6px;
+    }
+    summary::-webkit-details-marker{ display:none; }
+
+    .chev{
+      width:28px;height:28px;
+      border-radius:10px;
+      border:1px solid rgba(199,162,93,.18);
+      background:rgba(10,10,12,.22);
+      color:rgba(242,209,137,.9);
+      display:grid;place-items:center;
+      transition:.2s ease;
+      flex:0 0 auto;
+    }
+    details[open] .chev{ transform:rotate(180deg); }
+    details p{
+      margin:8px 6px 6px;
+      color:var(--muted);
+      font-size:14px;
+      max-width:82ch;
+    }
+
+    footer{
+      margin-top:12px;
+      padding:26px 0 calc(46px + var(--safeBottom));
+      border-top:1px solid var(--line);
+      color:var(--muted2);
+    }
+    .footer-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .small{ font-size:12px; color:var(--muted2); }
+
+    .drawer{
+      position:fixed;
+      inset:0;
+      z-index:60;
+      display:none;
+      background:rgba(0,0,0,.58);
+      backdrop-filter:blur(8px);
+      padding:16px;
+      padding-top:calc(16px + var(--safeTop));
+    }
+    .drawer.open{ display:block; }
+    .drawer-card{
+      max-width:560px;
+      margin:0 auto;
+      border-radius:calc(var(--radius) + 8px);
+      border:1px solid rgba(242,209,137,.22);
+      background:rgba(10,10,12,.82);
+      box-shadow:var(--shadow);
+      padding:14px;
+    }
+    .drawer-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:6px 6px 10px;
+    }
+    .close{
+      width:42px;height:42px;
+      border-radius:14px;
+      border:1px solid rgba(199,162,93,.2);
+      background:rgba(18,18,26,.3);
+      color:var(--text);
+      font-size:20px;
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+    }
+    .drawer-links a{
+      display:block;
+      padding:12px;
+      margin:10px 0;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(18,18,26,.18);
+      color:var(--muted);
+      font-size:12px;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+    }
+    .drawer-links a:hover{
+      color:var(--text);
+      border-color:var(--line2);
+    }
+    .drawer-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      padding:6px;
+    }
+    .drawer-actions .btn{ width:100%; }
+
+    .sticky-cta{
+      display:none;
+      position:fixed;
+      left:0; right:0; bottom:0;
+      z-index:55;
+      padding:10px 12px;
+      padding-bottom:calc(10px + var(--safeBottom));
+      background:rgba(10,10,12,.74);
+      border-top:1px solid var(--line);
+      backdrop-filter:blur(10px);
+    }
+    .sticky-cta .btn{ width:100%; }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(10px);
+      transition:.55s ease;
+    }
+    .reveal.show{
+      opacity:1;
+      transform:none;
+    }
+
+    @media (max-width: 1080px){
+      .hero-grid{ grid-template-columns:1fr; }
+      .proof-bar{ grid-template-columns:repeat(2,1fr); }
+      .grid-4{ grid-template-columns:repeat(2,1fr); }
+      .trust-grid{ grid-template-columns:repeat(2,1fr); }
+    }
+
+    @media (max-width: 980px){
+      nav{ display:none; }
+      .menu-btn{ display:inline-flex; }
+      .brand{ min-width:unset; }
+      .hero{ padding-top:42px; }
+    }
+
+    @media (max-width: 640px){
+      .container{ width:min(var(--max), 94vw); }
+      h1{ font-size:clamp(32px, 9vw, 44px); max-width:none; }
+      .lead{ font-size:15px; }
+      .panel-top,
+      .grid-4,
+      .grid-3,
+      .grid-2,
+      .proof-bar,
+      .trust-grid{
+        grid-template-columns:1fr;
+      }
+      .hero-actions .btn,
+      .cta-row .btn{
+        width:100%;
+      }
+      .hero-actions{ gap:10px; }
+      .card,.step,.case,.form-card,.trust-card{ padding:16px; }
+      section{ padding:34px 0; }
+      .sticky-cta{ display:block; }
+      footer{ padding-bottom:calc(110px + var(--safeBottom)); }
+      .cta .btn-primary{ display:none; }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior:auto; }
+      .reveal{ opacity:1; transform:none; }
+      .btn, nav a{ transition:none; }
+      .btn:hover{ transform:none; }
+      .btn-primary:before{ display:none; }
+    }
+  </style>
+</head>
+<body>
+  <script>
+    window.ALFATRAF_TG_USERNAME = "AlphaTraff_1";
+    window.ALFATRAF_TG_BASE = "https://t.me/" + window.ALFATRAF_TG_USERNAME;
+    window.ALFATRAF_LOGO = "crypto.png";
+  </script>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#top" aria-label="ALFATRAF">
+        <span class="logo-wrap" aria-hidden="true">
+          <img id="logoImg" alt="ALFATRAF Logo" />
+          <span class="logo-fallback" id="logoFallback" style="display:none;">A</span>
+        </span>
+        <div>
+          <b>ALFATRAF</b>
+          <small>Crypto Telegram growth</small>
+        </div>
+      </a>
+
+      <nav aria-label="Навигация">
+        <a href="#proof">Цифры</a>
+        <a href="#problems">Проблемы</a>
+        <a href="#how">Как работаем</a>
+        <a href="#cases">Кейсы</a>
+        <a href="#trust">Почему мы</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="cta">
+        <button class="menu-btn" id="menuBtn" aria-label="Открыть меню">Меню</button>
+        <a class="btn btn-primary tg-link" href="#">Получить разбор канала →</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Меню">
+    <div class="drawer-card">
+      <div class="drawer-top">
+        <div class="brand">
+          <span class="logo-wrap" aria-hidden="true" style="width:34px;height:34px;">
+            <img id="logoImg2" alt="ALFATRAF Logo" />
+            <span class="logo-fallback" id="logoFallback2" style="display:none;">A</span>
+          </span>
+          <div>
+            <b>ALFATRAF</b>
+            <small>Crypto Telegram growth</small>
+          </div>
+        </div>
+        <button class="close" id="closeDrawer" aria-label="Закрыть">×</button>
+      </div>
+
+      <div class="drawer-links">
+        <a href="#proof" class="drawerLink">Цифры</a>
+        <a href="#problems" class="drawerLink">Проблемы</a>
+        <a href="#how" class="drawerLink">Как работаем</a>
+        <a href="#cases" class="drawerLink">Кейсы</a>
+        <a href="#trust" class="drawerLink">Почему мы</a>
+        <a href="#faq" class="drawerLink">FAQ</a>
+      </div>
+
+      <div class="drawer-actions">
+        <a class="btn btn-primary tg-link" href="#">Получить разбор канала →</a>
+        <a class="btn btn-ghost" href="#top">Наверх</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sticky-cta">
+    <a class="btn btn-primary tg-link" href="#">Получить разбор канала в Telegram →</a>
+  </div>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow"><span class="dot"></span> только для crypto / trading / signals / education</div>
+
+          <h1>Приводим целевых подписчиков в крипто Telegram-каналы из соцсетей</h1>
+
+          <p class="lead">
+            Собираем рабочую систему роста: креативы, воронка, прогрев и масштабирование.
+            Не хаотичная закупка рекламы, а понятный процесс с фокусом на цене подписчика и качестве аудитории.
+          </p>
+
+          <div class="hero-bullets">
+            <span><span class="check">✓</span> Работаем только с крипто-нишей</span>
+            <span><span class="check">✓</span> Даём ориентир по CPL и план запуска до старта</span>
+            <span><span class="check">✓</span> Смотрим не только на объём, но и на качество подписчика</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#leadForm">Получить разбор канала →</a>
+            <a class="btn btn-ghost" href="#cases">Посмотреть кейсы</a>
+          </div>
+
+          <div class="microtrust">
+            <span><span class="check">✓</span> Без “слива” бюджета в случайный трафик</span>
+            <span><span class="check">✓</span> Подходит для каналов на рост и монетизацию</span>
+            <span><span class="check">✓</span> Быстрый старт после брифа</span>
+          </div>
+        </div>
+
+        <div class="hero-panel reveal">
+          <div class="panel-top">
+            <div class="mini-stat">
+              <div class="label">Фокус</div>
+              <div class="value">CPL</div>
+              <p>Оптимизируем цену подписчика и отслеживаем качество трафика.</p>
+            </div>
+            <div class="mini-stat">
+              <div class="label">Модель</div>
+              <div class="value">System</div>
+              <p>Не разовая реклама, а повторяемая система притока аудитории.</p>
+            </div>
+          </div>
+
+          <div class="form-card" id="leadForm">
+            <h2 class="form-title">Получите план запуска под ваш канал</h2>
+            <p class="form-sub">
+              Заполните 3 поля — и откроем Telegram с уже готовым сообщением менеджеру.
+            </p>
+
+            <form class="form" id="tgLeadForm">
+              <div class="field">
+                <label for="channelLink">Ссылка на канал</label>
+                <input class="input" id="channelLink" type="text" placeholder="Например: https://t.me/yourchannel" />
+              </div>
+
+              <div class="field">
+                <label for="niche">Ниша</label>
+                <select class="select" id="niche">
+                  <option value="">Выберите нишу</option>
+                  <option>Трейдинг</option>
+                  <option>Сигналы</option>
+                  <option>Аналитика</option>
+                  <option>Обучение / комьюнити</option>
+                  <option>Инвест-канал</option>
+                  <option>Другое</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="goal">Цель</label>
+                <textarea class="textarea" id="goal" placeholder="Например: хочу стабильный приток подписчиков, снизить стоимость лида, выйти на монетизацию, набрать комьюнити"></textarea>
+              </div>
+
+              <button class="btn btn-primary" type="submit">Открыть Telegram и отправить заявку →</button>
+              <p class="form-note">После клика откроется Telegram с уже подготовленным текстом заявки.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proof">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>Что важно владельцу крипто-канала</h2>
+            <p class="sub">
+              Не просто “дешёвый трафик”, а понятная экономика, качество аудитории и возможность масштабировать рабочую связку.
+            </p>
+          </div>
+        </div>
+
+        <div class="proof-bar">
+          <div class="proof-item reveal">
+            <div class="big">CPL</div>
+            <div class="small">Смотрим на стоимость подписчика и не игнорируем качество аудитории.</div>
+          </div>
+          <div class="proof-item reveal">
+            <div class="big">Daily</div>
+            <div class="small">Задача — не всплеск на 2 дня, а системный ежедневный приток.</div>
+          </div>
+          <div class="proof-item reveal">
+            <div class="big">Tests</div>
+            <div class="small">Запускаем гипотезы, оставляем рабочее, режем слабые связки.</div>
+          </div>
+          <div class="proof-item reveal">
+            <div class="big">Scale</div>
+            <div class="small">Когда экономика сходится, масштабируем объём без хаоса.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="problems">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>Почему большинство крипто-каналов растут нестабильно</h2>
+            <p class="sub">
+              Обычно проблема не в бюджете, а в том, что трафик покупается без системы, без прогрева и без нормальной логики удержания.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="card reveal">
+            <p class="kicker">Проблема #1</p>
+            <h3>Разовые размещения дают краткий всплеск</h3>
+            <p>Подписчики приходят рывком, потом рост останавливается. Управлять этим почти невозможно.</p>
+          </div>
+
+          <div class="card reveal">
+            <p class="kicker">Проблема #2</p>
+            <h3>Подписчик выходит слишком дорогим</h3>
+            <p>Без тестов, креативов и воронки бюджет уходит в трафик, который плохо конвертируется в качественную аудиторию.</p>
+          </div>
+
+          <div class="card reveal">
+            <p class="kicker">Проблема #3</p>
+            <h3>Канал зависит от “случайной удачи”</h3>
+            <p>Сегодня один пост сработал, завтра нет. Нет повторяемой модели, которую можно усиливать и масштабировать.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>Как мы строим систему роста</h2>
+            <p class="sub">
+              Наша задача — собрать понятную механику: от первого касания в соцсетях до подписки в Telegram и дальнейшего масштабирования.
+            </p>
+          </div>
+          <a class="btn btn-primary reveal" href="#leadForm">Получить план запуска →</a>
+        </div>
+
+        <div class="grid-2">
+          <div class="step reveal">
+            <div class="step-num">1</div>
+            <div>
+              <h3>Аудит канала и оффера</h3>
+              <p>Смотрим упаковку канала, позиционирование, контент, точку входа и то, что мешает человеку подписаться и остаться.</p>
+            </div>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-num">2</div>
+            <div>
+              <h3>Подбираем связку под вашу нишу</h3>
+              <p>Определяем угол захода, креативы, прогрев и сценарий перехода из соцсетей в Telegram.</p>
+            </div>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-num">3</div>
+            <div>
+              <h3>Запускаем тесты</h3>
+              <p>Проверяем гипотезы по аудиториям, креативам и форматам, чтобы найти рабочую экономику.</p>
+            </div>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-num">4</div>
+            <div>
+              <h3>Оптимизируем CPL и качество</h3>
+              <p>Убираем слабые связки, усиливаем сильные, следим не только за ценой, но и за качеством подписчика.</p>
+            </div>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-num">5</div>
+            <div>
+              <h3>Масштабируем рабочее</h3>
+              <p>Когда видим вменяемую стоимость и стабильность, увеличиваем объём без лишнего хаоса.</p>
+            </div>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-num">6</div>
+            <div>
+              <h3>Держим рост под контролем</h3>
+              <p>Работаем как с потоком заявок, так и с удержанием, чтобы канал рос не только быстро, но и осознанно.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="who">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>Кому подходит</h2>
+            <p class="sub">
+              Лучше всего система работает там, где важны доверие, повторные касания и качественная аудитория, а не просто дешёвый трафик.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-4">
+          <div class="card reveal">
+            <p class="kicker">Сегмент</p>
+            <h3>Трейдинг</h3>
+            <p>Для каналов, которым нужен стабильный рост, понятный CPL и аудитория, вовлечённая в контент.</p>
+          </div>
+
+          <div class="card reveal">
+            <p class="kicker">Сегмент</p>
+            <h3>Сигналы</h3>
+            <p>Когда особенно важно не просто привлекать подписчиков, а доводить релевантных людей до канала.</p>
+          </div>
+
+          <div class="card reveal">
+            <p class="kicker">Сегмент</p>
+            <h3>Аналитика</h3>
+            <p>Для проектов, где ценность раскрывается через контент и нужен прогрев до подписки.</p>
+          </div>
+
+          <div class="card reveal">
+            <p class="kicker">Сегмент</p>
+            <h3>Обучение / комьюнити</h3>
+            <p>Подходит для долгого цикла: подписка, удержание, вовлечение и дальнейшая монетизация аудитории.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cases">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>Примеры кейсов</h2>
+            <p class="sub">
+              Ниже — демонстрационные примеры структуры кейсов для лендинга. Лучше заменить их на реальные данные, когда будут готовы скрины и точные цифры.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="case reveal">
+            <div class="case-top">
+              <div>
+                <p class="kicker">Пример кейса</p>
+                <h3>Трейдинг-канал</h3>
+              </div>
+              <span class="badge">28 дней</span>
+            </div>
+            <p>Клиент пришёл с задачей снизить стоимость подписчика и убрать зависимость от нерегулярных рекламных размещений.</p>
+            <div class="case-list">
+              <div class="case-line"><span>Что сделали</span><b>Воронка + тест 8 креативов</b></div>
+              <div class="case-line"><span>Результат</span><b>+2 470 подписчиков</b></div>
+              <div class="case-line"><span>Ориентир CPL</span><b>$1.82</b></div>
+              <div class="case-line"><span>Итог</span><b>Стабильный ежедневный поток</b></div>
+            </div>
+          </div>
+
+          <div class="case reveal">
+            <div class="case-top">
+              <div>
+                <p class="kicker">Пример кейса</p>
+                <h3>Канал с сигналами</h3>
+              </div>
+              <span class="badge">30 дней</span>
+            </div>
+            <p>Цель была в том, чтобы собрать более качественную аудиторию и не гнаться за пустым объёмом.</p>
+            <div class="case-list">
+              <div class="case-line"><span>Что сделали</span><b>Новые офферы + прогрев</b></div>
+              <div class="case-line"><span>Результат</span><b>+3 200 подписчиков</b></div>
+              <div class="case-line"><span>Ориентир CPL</span><b>$1.55</b></div>
+              <div class="case-line"><span>Итог</span><b>Рост без резких просадок</b></div>
+            </div>
+          </div>
+
+          <div class="case reveal">
+            <div class="case-top">
+              <div>
+                <p class="kicker">Пример кейса</p>
+                <h3>Crypto education / community</h3>
+              </div>
+              <span class="badge">21 день</span>
+            </div>
+            <p>Задача — выстроить систему притока в канал под обучение и дальнейшую монетизацию комьюнити.</p>
+            <div class="case-list">
+              <div class="case-line"><span>Что сделали</span><b>Связка из соцсетей в Telegram</b></div>
+              <div class="case-line"><span>Результат</span><b>+1 680 подписчиков</b></div>
+              <div class="case-line"><span>Ориентир CPL</span><b>$1.94</b></div>
+              <div class="case-line"><span>Итог</span><b>Лучше удержание аудитории</b></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="height:14px"></div>
+
+        <div class="cta-block reveal">
+          <div class="cta-row">
+            <div>
+              <h2>Хотите понять, какой сценарий сработает именно у вас?</h2>
+              <p>Напишите менеджеру в Telegram: разберём канал, нишу и дадим ориентир по связке, бюджету и стоимости подписчика.</p>
+            </div>
+            <a class="btn btn-primary tg-link" href="#">Запросить разбор →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="trust">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>Почему нам доверяют</h2>
+            <p class="sub">
+              В крипто-нише доверие важнее красивых обещаний, поэтому мы делаем упор на процесс, прозрачность и рабочую экономику.
+            </p>
+          </div>
+        </div>
+
+        <div class="trust-grid">
+          <div class="trust-card reveal">
+            <p class="kicker">Подход</p>
+            <h3>Только crypto-ниша</h3>
+            <p>Не распыляемся на всё подряд. Фокусируемся на проектах, где понимаем специфику трафика, прогрева и доверия аудитории.</p>
+          </div>
+
+          <div class="trust-card reveal">
+            <p class="kicker">Принцип</p>
+            <h3>Не обещаем “лёгкие иксы”</h3>
+            <p>Не продаём сказки. Сначала анализируем канал и только потом говорим, какая модель роста может сработать.</p>
+          </div>
+
+          <div class="trust-card reveal">
+            <p class="kicker">Экономика</p>
+            <h3>Смотрим на цифры, а не на ощущения</h3>
+            <p>Оцениваем стоимость подписчика, стабильность связки и качество трафика, а не только красивый объём.</p>
+          </div>
+
+          <div class="trust-card reveal">
+            <p class="kicker">Запуск</p>
+            <h3>Даем понятный план до старта</h3>
+            <p>Перед запуском обсуждаем нишу, цель, подход к креативам и ориентир по бюджету для тестов.</p>
+          </div>
+
+          <div class="trust-card reveal">
+            <p class="kicker">Контроль</p>
+            <h3>Система вместо хаоса</h3>
+            <p>Наша задача — собрать повторяемую модель притока аудитории, а не устраивать разовые всплески ради отчёта.</p>
+          </div>
+
+          <div class="trust-card reveal">
+            <p class="kicker">Коммуникация</p>
+            <h3>Быстрый вход в работу</h3>
+            <p>Если проект нам подходит, быстро переходим к аудиту, брифу и стартовым тестам без лишней бюрократии.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="results">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>Что вы получаете на выходе</h2>
+            <p class="sub">
+              Не просто набор кликов или “залив трафика”, а работающую механику привлечения подписчиков, которую можно улучшать и масштабировать.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="card reveal">
+            <p class="kicker">Результат</p>
+            <div class="metric">
+              <div class="value">Flow</div>
+              <div class="label">стабильный приток подписчиков</div>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <p class="kicker">Результат</p>
+            <div class="metric">
+              <div class="value">Control</div>
+              <div class="label">понимание, что именно работает</div>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <p class="kicker">Результат</p>
+            <div class="metric">
+              <div class="value">Scale</div>
+              <div class="label">возможность усиливать объём</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>FAQ</h2>
+            <p class="sub">
+              Здесь ответы на вопросы, которые чаще всего мешают человеку оставить заявку.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <details>
+            <summary>С каким бюджетом есть смысл стартовать? <span class="chev">⌄</span></summary>
+            <p>Стартовый бюджет зависит от ниши, цели и амбиций по объёму. В диалоге в Telegram мы сначала смотрим вводные и только потом даём ориентир на тестовый запуск.</p>
+          </details>
+
+          <details>
+            <summary>Как вы оцениваете качество подписчиков? <span class="chev">⌄</span></summary>
+            <p>Мы смотрим не только на стоимость подписчика, но и на адекватность аудитории для вашей ниши, реакцию на контент и устойчивость притока. Дешёвый подписчик не всегда означает хороший результат.</p>
+          </details>
+
+          <details>
+            <summary>Когда можно ждать первые результаты? <span class="chev">⌄</span></summary>
+            <p>Обычно после подготовки и запуска тестов первые сигналы по связкам видны быстро, а дальше идёт оптимизация и масштабирование того, что показывает нормальную экономику.</p>
+          </details>
+
+          <details>
+            <summary>Вы даёте гарантии по точным цифрам? <span class="chev">⌄</span></summary>
+            <p>Точные цифры зависят от ниши, упаковки канала, контента, бюджета и качества входящих креативов. Мы не обещаем магию, а строим прозрачный процесс, в котором понятно, что работает и почему.</p>
+          </details>
+
+          <details>
+            <summary>Что нужно от меня для старта? <span class="chev">⌄</span></summary>
+            <p>Ссылка на канал, краткое описание ниши, цель и готовность быстро давать обратную связь по креативам и связкам. Этого обычно достаточно, чтобы начать предметный разговор.</p>
+          </details>
+
+          <details>
+            <summary>Что если у меня уже был плохой опыт с трафиком? <span class="chev">⌄</span></summary>
+            <p>Это частая история. Именно поэтому мы начинаем не с обещаний, а с разбора текущей ситуации: что не сработало раньше, где проседала воронка и что можно изменить в новой связке.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-block reveal">
+          <div class="cta-row">
+            <div>
+              <h2>Готовы перестать закупать трафик наугад?</h2>
+              <p>
+                Напишите менеджеру в Telegram и получите разбор канала, подход к запуску и ориентир по тому,
+                как можно выстроить системный рост именно в вашей нише.
+              </p>
+            </div>
+            <a class="btn btn-primary tg-link" href="#">Написать менеджеру →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div class="brand" aria-label="ALFATRAF footer">
+        <span class="logo-wrap" aria-hidden="true" style="width:34px;height:34px;">
+          <img id="logoImg3" alt="ALFATRAF Logo" />
+          <span class="logo-fallback" id="logoFallback3" style="display:none;">A</span>
+        </span>
+        <div>
+          <b>ALFATRAF</b>
+          <small>Crypto Telegram growth</small>
+        </div>
+      </div>
+
+      <div class="small">© <span id="year"></span> ALFATRAF. Все права защищены.</div>
+      <a class="btn btn-primary tg-link" href="#">Получить разбор →</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function bindLogo(imgId, fallbackId){
+      const img = document.getElementById(imgId);
+      const fb = document.getElementById(fallbackId);
+      if(!img || !fb) return;
+      img.src = window.ALFATRAF_LOGO;
+      img.loading = "lazy";
+      img.onerror = () => {
+        img.style.display = "none";
+        fb.style.display = "inline";
+      };
+      img.onload = () => {
+        img.style.display = "block";
+        fb.style.display = "none";
+      };
+    }
+    bindLogo("logoImg", "logoFallback");
+    bindLogo("logoImg2", "logoFallback2");
+    bindLogo("logoImg3", "logoFallback3");
+
+    function buildTelegramUrl(message){
+      const username = window.ALFATRAF_TG_USERNAME;
+      const encoded = encodeURIComponent(message);
+      return "https://t.me/" + username + "?text=" + encoded;
+    }
+
+    const defaultMessage = [
+      "Здравствуйте!",
+      "",
+      "Хочу получить разбор моего Telegram-канала.",
+      "",
+      "Ссылка на канал:",
+      "Ниша:",
+      "Цель:",
+      "",
+      "Подскажите, какой подход вы бы рекомендовали и какой может быть ориентир по стоимости подписчика?"
+    ].join("\n");
+
+    document.querySelectorAll(".tg-link").forEach(link => {
+      link.setAttribute("href", buildTelegramUrl(defaultMessage));
+    });
+
+    const leadForm = document.getElementById("tgLeadForm");
+    leadForm?.addEventListener("submit", function(e){
+      e.preventDefault();
+
+      const channel = document.getElementById("channelLink").value.trim();
+      const niche = document.getElementById("niche").value.trim();
+      const goal = document.getElementById("goal").value.trim();
+
+      const message = [
+        "Здравствуйте!",
+        "",
+        "Хочу получить разбор моего Telegram-канала.",
+        "",
+        "Ссылка на канал: " + (channel || "не указана"),
+        "Ниша: " + (niche || "не указана"),
+        "Цель: " + (goal || "не указана"),
+        "",
+        "Подскажите, пожалуйста, какой подход вы бы рекомендовали, с чего лучше начать и какой может быть ориентир по стоимости подписчика?"
+      ].join("\n");
+
+      const url = buildTelegramUrl(message);
+
+      if (window.fbq) {
+        try {
+          fbq('track', 'Lead');
+        } catch(err) {}
+      }
+
+      window.open(url, "_blank");
+    });
+
+    const drawer = document.getElementById("drawer");
+    const menuBtn = document.getElementById("menuBtn");
+    const closeDrawer = document.getElementById("closeDrawer");
+    const drawerLinks = document.querySelectorAll(".drawerLink");
+
+    const openDrawer = () => drawer.classList.add("open");
+    const hideDrawer = () => drawer.classList.remove("open");
+
+    menuBtn?.addEventListener("click", openDrawer);
+    closeDrawer?.addEventListener("click", hideDrawer);
+    drawer?.addEventListener("click", (e) => {
+      if(e.target === drawer) hideDrawer();
+    });
+    drawerLinks.forEach(link => link.addEventListener("click", hideDrawer));
+
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if(!prefersReduced){
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting) entry.target.classList.add("show");
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+    } else {
+      document.querySelectorAll(".reveal").forEach(el => el.classList.add("show"));
+    }
+  </script>
+</body>
+</html>
