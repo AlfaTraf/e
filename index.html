@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>ALFATRAF — подписчики в крипто Telegram-каналы из соцсетей</title>
-  <meta name="description" content="ALFATRAF помогает крипто Telegram-каналам получать стабильный поток целевых подписчиков из соцсетей через воронки, креативы и системную оптимизацию." />
+  <title>ALFATRAF — рост крипто Telegram-каналов</title>
+  <meta name="description" content="ALFATRAF помогает крипто Telegram-каналам получать стабильный поток целевых подписчиков из соцсетей через системный подход, воронки и оптимизацию." />
   <meta name="theme-color" content="#0A0A0C" />
 
   <!-- Meta Pixel Code -->
@@ -20,17 +20,20 @@
   fbq('init', '2124593531676935');
   fbq('track', 'PageView');
   </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=2124593531676935&ev=PageView&noscript=1"
-  /></noscript>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=2124593531676935&ev=PageView&noscript=1"
+      alt=""
+    />
+  </noscript>
   <!-- End Meta Pixel Code -->
 
   <style>
     :root{
       --bg:#0A0A0C;
       --bg2:#101017;
-      --card:#151520;
-      --card2:#181824;
+      --card:#14141D;
+      --card2:#181822;
       --text:#F5F1E8;
       --muted:rgba(245,241,232,.78);
       --muted2:rgba(245,241,232,.56);
@@ -38,25 +41,30 @@
       --gold2:#F2D189;
       --line:rgba(199,162,93,.18);
       --line2:rgba(242,209,137,.28);
-      --shadow:0 24px 90px rgba(0,0,0,.52);
-      --radius:22px;
-      --radius2:16px;
-      --max:1180px;
+      --success:rgba(123, 222, 158, .95);
+      --shadow:0 24px 90px rgba(0,0,0,.54);
+      --radius:24px;
+      --radius2:18px;
+      --radius3:14px;
+      --max:1160px;
       --safeTop: env(safe-area-inset-top, 0px);
       --safeBottom: env(safe-area-inset-bottom, 0px);
       color-scheme: dark;
     }
 
     *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
+    html{
+      scroll-behavior:smooth;
+    }
     html,body{ height:100%; }
+
     body{
       margin:0;
       color:var(--text);
-      font:16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font:16px/1.58 Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background:
-        radial-gradient(1100px 700px at 75% 10%, rgba(199,162,93,.14), transparent 56%),
-        radial-gradient(800px 600px at 10% 80%, rgba(199,162,93,.09), transparent 60%),
+        radial-gradient(1100px 700px at 78% 8%, rgba(199,162,93,.14), transparent 56%),
+        radial-gradient(900px 650px at 8% 82%, rgba(199,162,93,.10), transparent 60%),
         linear-gradient(180deg, var(--bg), var(--bg2));
       overflow-x:hidden;
       -webkit-font-smoothing: antialiased;
@@ -65,15 +73,20 @@
     }
 
     a{ color:inherit; text-decoration:none; }
-    img{ max-width:100%; display:block; }
-    .container{ width:min(var(--max), 92vw); margin:0 auto; }
+    img{ display:block; max-width:100%; }
+    button, input, select, textarea{ font:inherit; }
+
+    .container{
+      width:min(var(--max), 92vw);
+      margin:0 auto;
+    }
 
     .topbar{
       position:sticky;
       top:0;
       z-index:50;
       backdrop-filter: blur(12px);
-      background: rgba(10,10,12,.68);
+      background: rgba(10,10,12,.7);
       border-bottom:1px solid var(--line);
       padding-top:var(--safeTop);
     }
@@ -82,7 +95,7 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:16px;
+      gap:14px;
       padding:12px 0;
     }
 
@@ -90,17 +103,17 @@
       display:flex;
       align-items:center;
       gap:12px;
-      min-width:190px;
+      min-width:170px;
     }
-
     .logo-wrap{
-      width:38px;height:38px;
+      width:38px;
+      height:38px;
       border-radius:13px;
       border:1px solid rgba(242,209,137,.28);
       background:
-        radial-gradient(60% 60% at 30% 20%, rgba(242,209,137,.52), transparent 60%),
-        linear-gradient(135deg, rgba(199,162,93,.95), rgba(199,162,93,.12));
-      box-shadow: 0 10px 30px rgba(199,162,93,.18);
+        radial-gradient(60% 60% at 30% 20%, rgba(242,209,137,.5), transparent 60%),
+        linear-gradient(135deg, rgba(199,162,93,.95), rgba(199,162,93,.14));
+      box-shadow:0 10px 28px rgba(199,162,93,.18);
       overflow:hidden;
       display:grid;
       place-items:center;
@@ -117,8 +130,8 @@
       font-size:16px;
       color:#fff;
       opacity:.95;
+      user-select:none;
     }
-
     .brand b{
       display:block;
       font-weight:800;
@@ -154,27 +167,32 @@
       background:rgba(199,162,93,.08);
     }
 
-    .cta{ display:flex; align-items:center; gap:10px; }
+    .cta{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
 
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
       gap:10px;
-      min-height:46px;
-      padding:12px 18px;
+      min-height:48px;
+      padding:13px 18px;
       border-radius:999px;
       border:1px solid rgba(199,162,93,.28);
       background:rgba(18,18,26,.36);
       color:var(--text);
       font-size:12px;
-      font-weight:700;
+      font-weight:800;
       letter-spacing:.1em;
       text-transform:uppercase;
       transition:.18s ease;
-      box-shadow: 0 10px 30px rgba(0,0,0,.32);
+      box-shadow:0 10px 30px rgba(0,0,0,.32);
       white-space:nowrap;
       cursor:pointer;
+      -webkit-tap-highlight-color: transparent;
     }
     .btn:hover{
       transform:translateY(-1px);
@@ -195,7 +213,7 @@
       content:"";
       position:absolute;
       inset:-2px;
-      background: linear-gradient(90deg, transparent, rgba(242,209,137,.28), transparent);
+      background:linear-gradient(90deg, transparent, rgba(242,209,137,.28), transparent);
       transform:translateX(-65%);
       transition:.6s ease;
       pointer-events:none;
@@ -203,26 +221,27 @@
     .btn-primary:hover:before{ transform:translateX(65%); }
 
     .btn-ghost{
-      background:rgba(18,18,26,.18);
+      background:rgba(18,18,26,.16);
       color:var(--muted);
     }
     .btn-ghost:hover{ color:var(--text); }
 
     .menu-btn{
       display:none;
-      min-height:44px;
+      min-height:46px;
       padding:10px 12px;
       border-radius:999px;
       border:1px solid var(--line);
       background:rgba(18,18,26,.3);
       color:var(--text);
       font-size:12px;
+      font-weight:700;
       letter-spacing:.1em;
       text-transform:uppercase;
       cursor:pointer;
     }
 
-    section{ padding:42px 0; }
+    section{ padding:44px 0; }
 
     .eyebrow{
       display:inline-flex;
@@ -234,19 +253,26 @@
       background:rgba(18,18,26,.24);
       color:rgba(242,209,137,.92);
       font-size:12px;
-      letter-spacing:.18em;
+      font-weight:700;
+      letter-spacing:.16em;
       text-transform:uppercase;
+      max-width:100%;
     }
     .dot{
-      width:7px;height:7px;border-radius:50%;
+      width:7px;
+      height:7px;
+      border-radius:50%;
       background:rgba(242,209,137,.92);
       box-shadow:0 0 20px rgba(242,209,137,.45);
+      flex:0 0 auto;
     }
 
-    .hero{ padding:56px 0 28px; }
+    .hero{
+      padding:56px 0 26px;
+    }
     .hero-grid{
       display:grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+      grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);
       gap:22px;
       align-items:stretch;
     }
@@ -255,49 +281,54 @@
       font-family: ui-serif, Georgia, "Times New Roman", serif;
       font-weight:700;
       letter-spacing:.01em;
-      line-height:1.05;
+      line-height:1.06;
       margin:0;
     }
     h1{
       margin-top:16px;
-      font-size:clamp(36px, 4.7vw, 62px);
+      font-size:clamp(36px, 4.5vw, 62px);
       max-width:12ch;
     }
-    h2{ font-size:clamp(26px, 2.7vw, 36px); }
+    h2{
+      font-size:clamp(26px, 2.8vw, 36px);
+    }
 
     .lead{
       margin:14px 0 0;
       color:var(--muted);
       font-size:17px;
-      max-width:64ch;
+      max-width:62ch;
     }
 
     .hero-bullets{
       display:grid;
-      grid-template-columns:1fr;
       gap:10px;
       margin-top:20px;
-      max-width:640px;
+      max-width:660px;
     }
+
     .hero-bullets span,
     .microtrust span,
-    .pill{
+    .chip{
       display:inline-flex;
       align-items:center;
       gap:9px;
+      width:fit-content;
+      max-width:100%;
       padding:10px 12px;
       border-radius:999px;
       border:1px solid var(--line);
       background:rgba(18,18,26,.18);
       color:var(--muted);
       font-size:14px;
-      width:fit-content;
-      max-width:100%;
     }
 
     .check{
-      width:17px;height:17px;border-radius:6px;
-      display:grid;place-items:center;
+      width:17px;
+      height:17px;
+      border-radius:6px;
+      display:grid;
+      place-items:center;
       border:1px solid rgba(242,209,137,.28);
       background:rgba(199,162,93,.18);
       color:rgba(242,209,137,.96);
@@ -313,6 +344,7 @@
       flex-wrap:wrap;
       margin-top:20px;
     }
+
     .microtrust{
       margin-top:18px;
       display:flex;
@@ -320,25 +352,41 @@
       gap:10px;
     }
 
+    .hero-side{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      height:100%;
+    }
+
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+    }
+
+    .mini-stat,
     .card,
-    .step,
     .case,
     .form-card,
-    .trust-card{
+    .trust-card,
+    .step,
+    .proof-item{
+      position:relative;
+      overflow:hidden;
       border-radius:var(--radius);
       border:1px solid var(--line);
       background:rgba(18,18,26,.28);
       box-shadow:0 18px 60px rgba(0,0,0,.28);
-      padding:20px;
-      position:relative;
-      overflow:hidden;
     }
 
+    .mini-stat:before,
     .card:before,
-    .step:before,
     .case:before,
     .form-card:before,
-    .trust-card:before{
+    .trust-card:before,
+    .step:before,
+    .proof-item:before{
       content:"";
       position:absolute;
       inset:-42%;
@@ -347,31 +395,20 @@
       opacity:.75;
       pointer-events:none;
     }
+
+    .mini-stat > *,
     .card > *,
-    .step > *,
     .case > *,
     .form-card > *,
-    .trust-card > *{ position:relative; }
-
-    .hero-panel{
-      height:100%;
-      display:flex;
-      flex-direction:column;
-      gap:14px;
-    }
-
-    .panel-top{
-      display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:12px;
+    .trust-card > *,
+    .step > *,
+    .proof-item > *{
+      position:relative;
     }
 
     .mini-stat{
-      border-radius:18px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.02);
       padding:16px;
-      min-height:96px;
+      min-height:100px;
     }
     .mini-stat .label{
       color:rgba(242,209,137,.88);
@@ -379,6 +416,7 @@
       letter-spacing:.15em;
       text-transform:uppercase;
       margin-bottom:10px;
+      font-weight:700;
     }
     .mini-stat .value{
       font-size:28px;
@@ -395,11 +433,14 @@
       font-size:13px;
     }
 
+    .form-card{
+      padding:22px;
+    }
     .form-title{
-      font-size:22px;
-      font-family: ui-serif, Georgia, serif;
-      line-height:1.15;
       margin:0 0 8px;
+      font-size:24px;
+      line-height:1.12;
+      font-family: ui-serif, Georgia, serif;
     }
     .form-sub{
       margin:0 0 16px;
@@ -420,31 +461,30 @@
       letter-spacing:.08em;
       text-transform:uppercase;
       color:var(--muted2);
+      font-weight:700;
     }
     .input,
     .select,
     .textarea{
       width:100%;
-      border-radius:14px;
+      border-radius:15px;
       border:1px solid rgba(199,162,93,.18);
       background:rgba(10,10,12,.42);
       color:var(--text);
       padding:14px 14px;
       outline:none;
-      font:inherit;
       transition:.18s ease;
     }
     .input:focus,
     .select:focus,
     .textarea:focus{
-      border-color:rgba(242,209,137,.4);
+      border-color:rgba(242,209,137,.42);
       box-shadow:0 0 0 4px rgba(242,209,137,.06);
     }
     .textarea{
+      min-height:96px;
       resize:vertical;
-      min-height:98px;
     }
-
     .form-note{
       color:var(--muted2);
       font-size:12px;
@@ -481,6 +521,29 @@
       gap:14px;
     }
 
+    .proof-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+    .proof-item{
+      padding:18px;
+    }
+    .proof-item .big{
+      font-size:32px;
+      line-height:1;
+      font-weight:800;
+      margin:0 0 10px;
+      background:linear-gradient(90deg, rgba(242,209,137,.98), rgba(199,162,93,.76));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .proof-item .small{
+      color:var(--muted);
+      font-size:14px;
+    }
+
     .kicker{
       display:flex;
       align-items:center;
@@ -488,12 +551,14 @@
       margin:0 0 10px;
       color:rgba(242,209,137,.9);
       font-size:12px;
+      font-weight:700;
       letter-spacing:.16em;
       text-transform:uppercase;
     }
     .kicker:before{
       content:"";
-      width:10px;height:10px;
+      width:10px;
+      height:10px;
       border-radius:5px;
       background:rgba(242,209,137,.22);
       border:1px solid rgba(242,209,137,.35);
@@ -501,21 +566,47 @@
       flex:0 0 auto;
     }
 
+    .card,
+    .case,
+    .trust-card{
+      padding:20px;
+    }
     .card h3,
-    .step h3,
     .case h3,
-    .trust-card h3{
+    .trust-card h3,
+    .step h3{
       margin:0 0 8px;
       font-size:17px;
       line-height:1.3;
     }
     .card p,
-    .step p,
     .case p,
-    .trust-card p{
+    .trust-card p,
+    .step p{
       margin:0;
       color:var(--muted);
       font-size:14px;
+    }
+
+    .step{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      padding:18px;
+      min-height:118px;
+    }
+    .step-num{
+      width:38px;
+      height:38px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(242,209,137,.28);
+      background:rgba(199,162,93,.12);
+      color:rgba(242,209,137,.94);
+      font-weight:900;
+      box-shadow:0 14px 40px rgba(0,0,0,.3);
+      flex:0 0 auto;
     }
 
     .metric{
@@ -539,52 +630,6 @@
       letter-spacing:.12em;
     }
 
-    .step{
-      display:flex;
-      align-items:flex-start;
-      gap:14px;
-      min-height:110px;
-    }
-    .step-num{
-      width:38px;height:38px;
-      border-radius:14px;
-      display:grid;place-items:center;
-      border:1px solid rgba(242,209,137,.28);
-      background:rgba(199,162,93,.12);
-      color:rgba(242,209,137,.94);
-      font-weight:900;
-      box-shadow:0 14px 40px rgba(0,0,0,.3);
-      flex:0 0 auto;
-    }
-
-    .proof-bar{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:14px;
-    }
-
-    .proof-item{
-      border-radius:20px;
-      border:1px solid var(--line);
-      background:rgba(18,18,26,.24);
-      padding:18px;
-      box-shadow:0 16px 50px rgba(0,0,0,.22);
-    }
-    .proof-item .big{
-      font-size:32px;
-      line-height:1;
-      font-weight:800;
-      margin:0 0 10px;
-      background:linear-gradient(90deg, rgba(242,209,137,.98), rgba(199,162,93,.76));
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
-    }
-    .proof-item .small{
-      color:var(--muted);
-      font-size:14px;
-    }
-
     .case{
       display:flex;
       flex-direction:column;
@@ -594,8 +639,8 @@
     .case-top{
       display:flex;
       justify-content:space-between;
-      gap:12px;
       align-items:flex-start;
+      gap:12px;
       flex-wrap:wrap;
     }
     .badge{
@@ -608,11 +653,11 @@
       background:rgba(18,18,26,.18);
       color:rgba(242,209,137,.92);
       font-size:11px;
+      font-weight:700;
       letter-spacing:.12em;
       text-transform:uppercase;
       white-space:nowrap;
     }
-
     .case-list{
       display:grid;
       gap:8px;
@@ -626,8 +671,15 @@
       color:var(--muted);
       font-size:14px;
     }
-    .case-line:first-child{ border-top:0; padding-top:0; }
-    .case-line b{ color:var(--text); font-weight:700; }
+    .case-line:first-child{
+      border-top:0;
+      padding-top:0;
+    }
+    .case-line b{
+      color:var(--text);
+      font-weight:700;
+      text-align:right;
+    }
 
     .trust-grid{
       display:grid;
@@ -636,6 +688,8 @@
     }
 
     .cta-block{
+      position:relative;
+      overflow:hidden;
       padding:28px;
       border-radius:calc(var(--radius) + 6px);
       border:1px solid rgba(242,209,137,.22);
@@ -644,8 +698,6 @@
         radial-gradient(700px 450px at 80% 70%, rgba(199,162,93,.1), transparent 60%),
         linear-gradient(180deg, rgba(18,18,26,.38), rgba(10,10,12,.32));
       box-shadow:var(--shadow);
-      position:relative;
-      overflow:hidden;
     }
     .cta-block:before{
       content:"";
@@ -655,7 +707,6 @@
       transform:rotate(12deg);
       pointer-events:none;
     }
-
     .cta-row{
       position:relative;
       display:flex;
@@ -667,6 +718,7 @@
     .cta-row p{
       margin:8px 0 0;
       color:var(--muted);
+      max-width:70ch;
     }
 
     details{
@@ -677,7 +729,6 @@
       padding:14px;
     }
     details + details{ margin-top:10px; }
-
     summary{
       list-style:none;
       cursor:pointer;
@@ -689,14 +740,15 @@
       padding:6px;
     }
     summary::-webkit-details-marker{ display:none; }
-
     .chev{
-      width:28px;height:28px;
+      width:28px;
+      height:28px;
       border-radius:10px;
       border:1px solid rgba(199,162,93,.18);
       background:rgba(10,10,12,.22);
       color:rgba(242,209,137,.9);
-      display:grid;place-items:center;
+      display:grid;
+      place-items:center;
       transition:.2s ease;
       flex:0 0 auto;
     }
@@ -721,8 +773,10 @@
       gap:14px;
       flex-wrap:wrap;
     }
-
-    .small{ font-size:12px; color:var(--muted2); }
+    .small{
+      font-size:12px;
+      color:var(--muted2);
+    }
 
     .drawer{
       position:fixed;
@@ -740,7 +794,7 @@
       margin:0 auto;
       border-radius:calc(var(--radius) + 8px);
       border:1px solid rgba(242,209,137,.22);
-      background:rgba(10,10,12,.82);
+      background:rgba(10,10,12,.84);
       box-shadow:var(--shadow);
       padding:14px;
     }
@@ -752,7 +806,8 @@
       padding:6px 6px 10px;
     }
     .close{
-      width:42px;height:42px;
+      width:42px;
+      height:42px;
       border-radius:14px;
       border:1px solid rgba(199,162,93,.2);
       background:rgba(18,18,26,.3);
@@ -764,13 +819,14 @@
     }
     .drawer-links a{
       display:block;
-      padding:12px;
+      padding:13px 12px;
       margin:10px 0;
       border-radius:14px;
       border:1px solid var(--line);
       background:rgba(18,18,26,.18);
       color:var(--muted);
       font-size:12px;
+      font-weight:700;
       letter-spacing:.1em;
       text-transform:uppercase;
     }
@@ -789,15 +845,34 @@
     .sticky-cta{
       display:none;
       position:fixed;
-      left:0; right:0; bottom:0;
+      left:0;
+      right:0;
+      bottom:0;
       z-index:55;
       padding:10px 12px;
       padding-bottom:calc(10px + var(--safeBottom));
-      background:rgba(10,10,12,.74);
+      background:rgba(10,10,12,.78);
       border-top:1px solid var(--line);
-      backdrop-filter:blur(10px);
+      backdrop-filter:blur(12px);
+      box-shadow:0 -12px 40px rgba(0,0,0,.22);
     }
-    .sticky-cta .btn{ width:100%; }
+    .sticky-cta-inner{
+      width:min(var(--max), 94vw);
+      margin:0 auto;
+      display:grid;
+      gap:8px;
+    }
+    .sticky-note{
+      font-size:11px;
+      color:var(--muted2);
+      text-align:center;
+      letter-spacing:.04em;
+    }
+    .sticky-cta .btn{
+      width:100%;
+      min-height:52px;
+      font-size:12px;
+    }
 
     .reveal{
       opacity:0;
@@ -811,7 +886,7 @@
 
     @media (max-width: 1080px){
       .hero-grid{ grid-template-columns:1fr; }
-      .proof-bar{ grid-template-columns:repeat(2,1fr); }
+      .proof-grid{ grid-template-columns:repeat(2,1fr); }
       .grid-4{ grid-template-columns:repeat(2,1fr); }
       .trust-grid{ grid-template-columns:repeat(2,1fr); }
     }
@@ -824,32 +899,221 @@
     }
 
     @media (max-width: 640px){
-      .container{ width:min(var(--max), 94vw); }
-      h1{ font-size:clamp(32px, 9vw, 44px); max-width:none; }
-      .lead{ font-size:15px; }
-      .panel-top,
+      .container{
+        width:min(var(--max), 94vw);
+      }
+
+      section{
+        padding:34px 0;
+      }
+
+      h1{
+        font-size:clamp(32px, 9vw, 44px);
+        max-width:none;
+        line-height:1.04;
+      }
+
+      h2{
+        font-size:clamp(25px, 7vw, 32px);
+        line-height:1.08;
+      }
+
+      .lead{
+        font-size:15px;
+        margin-top:12px;
+      }
+
+      .eyebrow{
+        font-size:10px;
+        letter-spacing:.12em;
+        padding:7px 10px;
+      }
+
+      .hero{
+        padding:30px 0 18px;
+      }
+
+      .hero-bullets{
+        gap:8px;
+        margin-top:16px;
+      }
+
+      .hero-bullets span,
+      .microtrust span,
+      .chip{
+        width:100%;
+        border-radius:16px;
+        font-size:13px;
+        line-height:1.4;
+        padding:11px 12px;
+      }
+
+      .hero-actions{
+        gap:10px;
+        margin-top:16px;
+      }
+
+      .hero-actions .btn{
+        width:100%;
+        min-height:52px;
+        font-size:12px;
+      }
+
+      .microtrust{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:8px;
+        margin-top:14px;
+      }
+
+      .hero-stats,
       .grid-4,
       .grid-3,
       .grid-2,
-      .proof-bar,
+      .proof-grid,
       .trust-grid{
         grid-template-columns:1fr;
       }
-      .hero-actions .btn,
-      .cta-row .btn{
+
+      .mini-stat{
+        min-height:auto;
+        padding:15px;
+      }
+      .mini-stat .value{
+        font-size:26px;
+      }
+
+      .form-card{
+        padding:16px;
+        border-radius:20px;
+      }
+      .form-title{
+        font-size:22px;
+      }
+      .form-sub{
+        font-size:13px;
+      }
+
+      .input,
+      .select,
+      .textarea{
+        padding:14px 13px;
+        border-radius:14px;
+        font-size:16px;
+      }
+
+      .form .btn{
+        min-height:52px;
         width:100%;
       }
-      .hero-actions{ gap:10px; }
-      .card,.step,.case,.form-card,.trust-card{ padding:16px; }
-      section{ padding:34px 0; }
-      .sticky-cta{ display:block; }
-      footer{ padding-bottom:calc(110px + var(--safeBottom)); }
-      .cta .btn-primary{ display:none; }
+
+      .proof-item,
+      .card,
+      .case,
+      .trust-card,
+      .step{
+        border-radius:20px;
+      }
+
+      .proof-item,
+      .card,
+      .case,
+      .trust-card{
+        padding:16px;
+      }
+
+      .proof-item .big{
+        font-size:28px;
+      }
+
+      .step{
+        padding:16px;
+        min-height:auto;
+        border-radius:20px;
+      }
+
+      .step-num{
+        width:34px;
+        height:34px;
+        border-radius:12px;
+        font-size:14px;
+      }
+
+      .case-line{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:4px;
+      }
+      .case-line b{
+        text-align:left;
+      }
+
+      .section-head{
+        margin-bottom:16px;
+      }
+
+      .cta-block{
+        padding:18px;
+        border-radius:24px;
+      }
+
+      .cta-row .btn{
+        width:100%;
+        min-height:52px;
+      }
+
+      .footer-row{
+        align-items:flex-start;
+      }
+
+      .topbar-inner{
+        min-height:62px;
+        padding:10px 0;
+      }
+
+      .brand{
+        gap:10px;
+      }
+      .brand b{
+        font-size:14px;
+      }
+      .brand small{
+        font-size:10px;
+      }
+      .logo-wrap{
+        width:34px;
+        height:34px;
+        border-radius:12px;
+      }
+
+      .cta .btn-primary{
+        display:none;
+      }
+
+      .sticky-cta{
+        display:block;
+      }
+
+      footer{
+        padding-bottom:calc(112px + var(--safeBottom));
+      }
+
+      .drawer{
+        padding:12px;
+        padding-top:calc(12px + var(--safeTop));
+      }
+      .drawer-card{
+        padding:12px;
+        border-radius:24px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce){
       html{ scroll-behavior:auto; }
-      .reveal{ opacity:1; transform:none; }
+      .reveal{
+        opacity:1;
+        transform:none;
+      }
       .btn, nav a{ transition:none; }
       .btn:hover{ transform:none; }
       .btn-primary:before{ display:none; }
@@ -859,7 +1123,6 @@
 <body>
   <script>
     window.ALFATRAF_TG_USERNAME = "AlphaTraff_1";
-    window.ALFATRAF_TG_BASE = "https://t.me/" + window.ALFATRAF_TG_USERNAME;
     window.ALFATRAF_LOGO = "crypto.png";
   </script>
 
@@ -878,7 +1141,6 @@
 
       <nav aria-label="Навигация">
         <a href="#proof">Цифры</a>
-        <a href="#problems">Проблемы</a>
         <a href="#how">Как работаем</a>
         <a href="#cases">Кейсы</a>
         <a href="#trust">Почему мы</a>
@@ -887,7 +1149,7 @@
 
       <div class="cta">
         <button class="menu-btn" id="menuBtn" aria-label="Открыть меню">Меню</button>
-        <a class="btn btn-primary tg-link" href="#">Получить разбор канала →</a>
+        <a class="btn btn-primary tg-link" href="#">Разбор канала →</a>
       </div>
     </div>
   </header>
@@ -910,7 +1172,6 @@
 
       <div class="drawer-links">
         <a href="#proof" class="drawerLink">Цифры</a>
-        <a href="#problems" class="drawerLink">Проблемы</a>
         <a href="#how" class="drawerLink">Как работаем</a>
         <a href="#cases" class="drawerLink">Кейсы</a>
         <a href="#trust" class="drawerLink">Почему мы</a>
@@ -918,14 +1179,17 @@
       </div>
 
       <div class="drawer-actions">
-        <a class="btn btn-primary tg-link" href="#">Получить разбор канала →</a>
+        <a class="btn btn-primary tg-link" href="#">Получить разбор →</a>
         <a class="btn btn-ghost" href="#top">Наверх</a>
       </div>
     </div>
   </div>
 
   <div class="sticky-cta">
-    <a class="btn btn-primary tg-link" href="#">Получить разбор канала в Telegram →</a>
+    <div class="sticky-cta-inner">
+      <a class="btn btn-primary tg-link" href="#">Получить разбор канала в Telegram →</a>
+      <div class="sticky-note">Откроем Telegram с уже готовым сообщением</div>
+    </div>
   </div>
 
   <main id="top">
@@ -934,7 +1198,7 @@
         <div class="reveal">
           <div class="eyebrow"><span class="dot"></span> только для crypto / trading / signals / education</div>
 
-          <h1>Приводим целевых подписчиков в крипто Telegram-каналы из соцсетей</h1>
+          <h1>Приводим целевых подписчиков в крипто Telegram-каналы</h1>
 
           <p class="lead">
             Собираем рабочую систему роста: креативы, воронка, прогрев и масштабирование.
@@ -954,20 +1218,20 @@
 
           <div class="microtrust">
             <span><span class="check">✓</span> Без “слива” бюджета в случайный трафик</span>
-            <span><span class="check">✓</span> Подходит для каналов на рост и монетизацию</span>
+            <span><span class="check">✓</span> Подходит для роста и монетизации</span>
             <span><span class="check">✓</span> Быстрый старт после брифа</span>
           </div>
         </div>
 
-        <div class="hero-panel reveal">
-          <div class="panel-top">
+        <div class="hero-side reveal">
+          <div class="hero-stats">
             <div class="mini-stat">
               <div class="label">Фокус</div>
               <div class="value">CPL</div>
-              <p>Оптимизируем цену подписчика и отслеживаем качество трафика.</p>
+              <p>Оптимизируем цену подписчика и смотрим на качество входящего трафика.</p>
             </div>
             <div class="mini-stat">
-              <div class="label">Модель</div>
+              <div class="label">Подход</div>
               <div class="value">System</div>
               <p>Не разовая реклама, а повторяемая система притока аудитории.</p>
             </div>
@@ -976,7 +1240,7 @@
           <div class="form-card" id="leadForm">
             <h2 class="form-title">Получите план запуска под ваш канал</h2>
             <p class="form-sub">
-              Заполните 3 поля — и откроем Telegram с уже готовым сообщением менеджеру.
+              Заполните поля — и откроем Telegram с уже готовым сообщением для менеджера.
             </p>
 
             <form class="form" id="tgLeadForm">
@@ -1000,7 +1264,7 @@
 
               <div class="field">
                 <label for="goal">Цель</label>
-                <textarea class="textarea" id="goal" placeholder="Например: хочу стабильный приток подписчиков, снизить стоимость лида, выйти на монетизацию, набрать комьюнити"></textarea>
+                <textarea class="textarea" id="goal" placeholder="Например: хочу стабильный приток подписчиков, снизить стоимость лида, набрать комьюнити, выйти на монетизацию"></textarea>
               </div>
 
               <button class="btn btn-primary" type="submit">Открыть Telegram и отправить заявку →</button>
@@ -1015,17 +1279,17 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <h2>Что важно владельцу крипто-канала</h2>
+            <h2>Что реально важно владельцу канала</h2>
             <p class="sub">
-              Не просто “дешёвый трафик”, а понятная экономика, качество аудитории и возможность масштабировать рабочую связку.
+              Не просто “налить трафика”, а получить понятную экономику, стабильный приток и возможность масштабировать рабочую связку.
             </p>
           </div>
         </div>
 
-        <div class="proof-bar">
+        <div class="proof-grid">
           <div class="proof-item reveal">
             <div class="big">CPL</div>
-            <div class="small">Смотрим на стоимость подписчика и не игнорируем качество аудитории.</div>
+            <div class="small">Смотрим на стоимость подписчика, а не на красивые обещания.</div>
           </div>
           <div class="proof-item reveal">
             <div class="big">Daily</div>
@@ -1033,7 +1297,7 @@
           </div>
           <div class="proof-item reveal">
             <div class="big">Tests</div>
-            <div class="small">Запускаем гипотезы, оставляем рабочее, режем слабые связки.</div>
+            <div class="small">Тестируем гипотезы и оставляем только рабочие связки.</div>
           </div>
           <div class="proof-item reveal">
             <div class="big">Scale</div>
@@ -1058,7 +1322,7 @@
           <div class="card reveal">
             <p class="kicker">Проблема #1</p>
             <h3>Разовые размещения дают краткий всплеск</h3>
-            <p>Подписчики приходят рывком, потом рост останавливается. Управлять этим почти невозможно.</p>
+            <p>Подписчики приходят рывком, потом рост останавливается. Такой моделью сложно управлять и почти невозможно масштабировать.</p>
           </div>
 
           <div class="card reveal">
@@ -1070,7 +1334,7 @@
           <div class="card reveal">
             <p class="kicker">Проблема #3</p>
             <h3>Канал зависит от “случайной удачи”</h3>
-            <p>Сегодня один пост сработал, завтра нет. Нет повторяемой модели, которую можно усиливать и масштабировать.</p>
+            <p>Сегодня одна подача сработала, завтра нет. Нет повторяемой модели, которую можно усиливать и держать под контролем.</p>
           </div>
         </div>
       </div>
@@ -1093,7 +1357,7 @@
             <div class="step-num">1</div>
             <div>
               <h3>Аудит канала и оффера</h3>
-              <p>Смотрим упаковку канала, позиционирование, контент, точку входа и то, что мешает человеку подписаться и остаться.</p>
+              <p>Смотрим упаковку канала, позиционирование, контент, точку входа и то, что мешает подписке и удержанию аудитории.</p>
             </div>
           </div>
 
@@ -1117,7 +1381,7 @@
             <div class="step-num">4</div>
             <div>
               <h3>Оптимизируем CPL и качество</h3>
-              <p>Убираем слабые связки, усиливаем сильные, следим не только за ценой, но и за качеством подписчика.</p>
+              <p>Убираем слабые связки, усиливаем сильные и смотрим не только на цену, но и на качество подписчика.</p>
             </div>
           </div>
 
@@ -1133,7 +1397,7 @@
             <div class="step-num">6</div>
             <div>
               <h3>Держим рост под контролем</h3>
-              <p>Работаем как с потоком заявок, так и с удержанием, чтобы канал рос не только быстро, но и осознанно.</p>
+              <p>Работаем не только с трафиком, но и с логикой удержания, чтобы канал рос устойчиво и осмысленно.</p>
             </div>
           </div>
         </div>
@@ -1155,25 +1419,25 @@
           <div class="card reveal">
             <p class="kicker">Сегмент</p>
             <h3>Трейдинг</h3>
-            <p>Для каналов, которым нужен стабильный рост, понятный CPL и аудитория, вовлечённая в контент.</p>
+            <p>Для каналов, которым нужен стабильный рост, понятный CPL и вовлечённая аудитория под контент и дальнейшую монетизацию.</p>
           </div>
 
           <div class="card reveal">
             <p class="kicker">Сегмент</p>
             <h3>Сигналы</h3>
-            <p>Когда особенно важно не просто привлекать подписчиков, а доводить релевантных людей до канала.</p>
+            <p>Когда важно не просто собирать подписчиков, а доводить в канал релевантных людей, а не случайный трафик.</p>
           </div>
 
           <div class="card reveal">
             <p class="kicker">Сегмент</p>
             <h3>Аналитика</h3>
-            <p>Для проектов, где ценность раскрывается через контент и нужен прогрев до подписки.</p>
+            <p>Для проектов, где ценность раскрывается через контент и нужен прогрев перед вступлением в канал.</p>
           </div>
 
           <div class="card reveal">
             <p class="kicker">Сегмент</p>
             <h3>Обучение / комьюнити</h3>
-            <p>Подходит для долгого цикла: подписка, удержание, вовлечение и дальнейшая монетизация аудитории.</p>
+            <p>Подходит для долгого цикла: подписка, удержание, вовлечение и дальнейшая работа с аудиторией внутри сообщества.</p>
           </div>
         </div>
       </div>
@@ -1185,7 +1449,7 @@
           <div>
             <h2>Примеры кейсов</h2>
             <p class="sub">
-              Ниже — демонстрационные примеры структуры кейсов для лендинга. Лучше заменить их на реальные данные, когда будут готовы скрины и точные цифры.
+              Ниже — демонстрационные примеры структуры кейсов. Лучше заменить их на реальные кейсы и добавить скрины, когда они будут готовы.
             </p>
           </div>
         </div>
@@ -1216,7 +1480,7 @@
               </div>
               <span class="badge">30 дней</span>
             </div>
-            <p>Цель была в том, чтобы собрать более качественную аудиторию и не гнаться за пустым объёмом.</p>
+            <p>Задача была в том, чтобы собрать более качественную аудиторию и не гнаться только за объёмом подписчиков.</p>
             <div class="case-list">
               <div class="case-line"><span>Что сделали</span><b>Новые офферы + прогрев</b></div>
               <div class="case-line"><span>Результат</span><b>+3 200 подписчиков</b></div>
@@ -1278,13 +1542,13 @@
           <div class="trust-card reveal">
             <p class="kicker">Принцип</p>
             <h3>Не обещаем “лёгкие иксы”</h3>
-            <p>Не продаём сказки. Сначала анализируем канал и только потом говорим, какая модель роста может сработать.</p>
+            <p>Не продаём сказки. Сначала анализируем канал и только потом обсуждаем, какая модель роста может реально сработать.</p>
           </div>
 
           <div class="trust-card reveal">
             <p class="kicker">Экономика</p>
             <h3>Смотрим на цифры, а не на ощущения</h3>
-            <p>Оцениваем стоимость подписчика, стабильность связки и качество трафика, а не только красивый объём.</p>
+            <p>Оцениваем стоимость подписчика, стабильность связки и качество трафика, а не только красивый объём в отчёте.</p>
           </div>
 
           <div class="trust-card reveal">
@@ -1296,7 +1560,7 @@
           <div class="trust-card reveal">
             <p class="kicker">Контроль</p>
             <h3>Система вместо хаоса</h3>
-            <p>Наша задача — собрать повторяемую модель притока аудитории, а не устраивать разовые всплески ради отчёта.</p>
+            <p>Наша задача — собрать повторяемую модель притока аудитории, а не устроить один случайный всплеск ради отчёта.</p>
           </div>
 
           <div class="trust-card reveal">
@@ -1361,7 +1625,7 @@
         <div class="reveal">
           <details>
             <summary>С каким бюджетом есть смысл стартовать? <span class="chev">⌄</span></summary>
-            <p>Стартовый бюджет зависит от ниши, цели и амбиций по объёму. В диалоге в Telegram мы сначала смотрим вводные и только потом даём ориентир на тестовый запуск.</p>
+            <p>Стартовый бюджет зависит от ниши, цели и амбиций по объёму. В Telegram мы сначала смотрим вводные и только потом даём ориентир на тестовый запуск.</p>
           </details>
 
           <details>
@@ -1371,7 +1635,7 @@
 
           <details>
             <summary>Когда можно ждать первые результаты? <span class="chev">⌄</span></summary>
-            <p>Обычно после подготовки и запуска тестов первые сигналы по связкам видны быстро, а дальше идёт оптимизация и масштабирование того, что показывает нормальную экономику.</p>
+            <p>Обычно после подготовки и запуска тестов первые сигналы по связкам видны довольно быстро, а дальше идёт оптимизация и масштабирование того, что показывает нормальную экономику.</p>
           </details>
 
           <details>
@@ -1424,7 +1688,7 @@
       </div>
 
       <div class="small">© <span id="year"></span> ALFATRAF. Все права защищены.</div>
-      <a class="btn btn-primary tg-link" href="#">Получить разбор →</a>
+      <a class="btn btn-primary tg-link" href="#">Разбор канала →</a>
     </div>
   </footer>
 
@@ -1435,25 +1699,28 @@
       const img = document.getElementById(imgId);
       const fb = document.getElementById(fallbackId);
       if(!img || !fb) return;
+
       img.src = window.ALFATRAF_LOGO;
       img.loading = "lazy";
+
       img.onerror = () => {
         img.style.display = "none";
         fb.style.display = "inline";
       };
+
       img.onload = () => {
         img.style.display = "block";
         fb.style.display = "none";
       };
     }
+
     bindLogo("logoImg", "logoFallback");
     bindLogo("logoImg2", "logoFallback2");
     bindLogo("logoImg3", "logoFallback3");
 
     function buildTelegramUrl(message){
       const username = window.ALFATRAF_TG_USERNAME;
-      const encoded = encodeURIComponent(message);
-      return "https://t.me/" + username + "?text=" + encoded;
+      return "https://t.me/" + username + "?text=" + encodeURIComponent(message);
     }
 
     const defaultMessage = [
@@ -1473,6 +1740,7 @@
     });
 
     const leadForm = document.getElementById("tgLeadForm");
+
     leadForm?.addEventListener("submit", function(e){
       e.preventDefault();
 
@@ -1492,15 +1760,13 @@
         "Подскажите, пожалуйста, какой подход вы бы рекомендовали, с чего лучше начать и какой может быть ориентир по стоимости подписчика?"
       ].join("\n");
 
-      const url = buildTelegramUrl(message);
-
       if (window.fbq) {
         try {
           fbq('track', 'Lead');
         } catch(err) {}
       }
 
-      window.open(url, "_blank");
+      window.open(buildTelegramUrl(message), "_blank");
     });
 
     const drawer = document.getElementById("drawer");
@@ -1513,16 +1779,21 @@
 
     menuBtn?.addEventListener("click", openDrawer);
     closeDrawer?.addEventListener("click", hideDrawer);
+
     drawer?.addEventListener("click", (e) => {
-      if(e.target === drawer) hideDrawer();
+      if (e.target === drawer) hideDrawer();
     });
-    drawerLinks.forEach(link => link.addEventListener("click", hideDrawer));
+
+    drawerLinks.forEach(link => {
+      link.addEventListener("click", hideDrawer);
+    });
 
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if(!prefersReduced){
+
+    if (!prefersReduced) {
       const io = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if(entry.isIntersecting) entry.target.classList.add("show");
+          if (entry.isIntersecting) entry.target.classList.add("show");
         });
       }, { threshold: 0.12 });
 
